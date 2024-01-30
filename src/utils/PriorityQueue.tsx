@@ -1,3 +1,4 @@
+export default class PriorityQueue<T> {
   private heap: T[];
 
   constructor() {
