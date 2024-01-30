@@ -1,0 +1,435 @@
+.homeParent {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    @media only screen and (max-width: 766px) {
+        display: none;
+    }
+
+    @media only screen and (max-height: 575.98px) {
+        display: none;
+    }
+}
+
+.messageDesktop {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: yellow;
+    font-family: prospec;
+
+    @media only screen and (min-width: 767px) and (min-height: 575.98px) {
+        display: none;
+    }
+}
+
+.loadingWindow {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+}
+
+.containerLoadingAnimation {
+    --uib-size: 60px;
+    --uib-color: yellow;
+    --uib-speed: 2.6s;
+    --uib-dot-size: calc(var(--uib-size) * 0.23);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--uib-size);
+    height: var(--uib-dot-size);
+    filter: url('#uib-jelly-ooze');
+    transition: 1s ease;
+}
+
+.dot {
+    position: absolute;
+    top: calc(50% - var(--uib-dot-size) / 2);
+    left: calc(0px - var(--uib-dot-size) / 2);
+    display: block;
+    height: var(--uib-dot-size);
+    width: var(--uib-dot-size);
+    border-radius: 50%;
+    background-color: var(--uib-color);
+    animation: stream var(--uib-speed) linear infinite both;
+    transition: background-color 0.3s ease;
+}
+
+.dot:nth-child(2) {
+    animation-delay: calc(var(--uib-speed) * -0.2);
+}
+
+.dot:nth-child(3) {
+    animation-delay: calc(var(--uib-speed) * -0.4);
+}
+
+.dot:nth-child(4) {
+    animation-delay: calc(var(--uib-speed) * -0.6);
+}
+
+.dot:nth-child(5) {
+    animation-delay: calc(var(--uib-speed) * -0.8);
+}
+
+@keyframes stream {
+
+    0%,
+    100% {
+        transform: translateX(0) scale(0);
+    }
+
+    50% {
+        transform: translateX(calc(var(--uib-size) * 0.5)) scale(1);
+    }
+
+    99.999% {
+        transform: translateX(calc(var(--uib-size))) scale(0);
+    }
+}
+
+#homeContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: yellow;
+    display: flex;
+    flex-direction: row;
+}
+
+#homeContent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.nodesInputBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 1s ease;
+    overflow: hidden;
+    transition: 1s ease;
+}
+
+.nodesInputBoxSideBar {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    transition: 1s ease;
+
+    @media screen and (min-width: 0px) and (max-width: 800px) {
+        left: 0;
+        width: 100%;
+    }
+}
+
+.nodesInputBoxSideBarSmallScreenHidden {
+    left: -100vw;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 1s ease;
+}
+
+.nodesInputBoxSideBarAfterAnimationEnd {
+    width: 0%;
+    height: 100%;
+    position: relative;
+    transition: 1s ease;
+}
+
+.nodesInputBoxHidden {
+    height: 0;
+    transition: 1s ease;
+}
+
+.nodesInputBoxCover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 1s ease;
+}
+
+.nodesInputBoxCoverHidden {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.nodesInputSideBarCover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 1s ease;
+    z-index: 5;
+}
+
+.nodesInputSideBarCoverAnimationStarted {
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    transition: 1s ease;
+}
+
+.nodesInputSideBarCoverHidden {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.animationContainer {
+    background-image: linear-gradient(to right, rgba(255, 255, 126, 0.95), rgba(255, 255, 126, 0.85));
+    position: absolute;
+    top: 0;
+    transition: 1s ease;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+    @media screen and (min-width: 0px) and (max-width: 800px) {
+        display: none;
+    }
+}
+
+.animationContainerHidden {
+    background-image: linear-gradient(to right, rgba(255, 255, 126, 0.95), rgba(255, 255, 126, 0.85));
+    position: absolute;
+    top: 100%;
+    transition: 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+    @media screen and (min-width: 0px) and (max-width: 800px) {
+        display: none;
+    }
+}
+
+.scatterBoxHidden {
+    position: relative;
+    width: 0;
+    transition: 1s ease;
+    overflow: hidden;
+}
+
+.scatterBox {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    z-index: 5;
+    background-color: rgba(255, 255, 126, 0.85);
+    transition: 1s ease;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 0px) and (max-width: 800px) {
+        position: absolute;
+        right: -100vw;
+        width: 100%;
+    }
+}
+
+.scatterBoxSmallScreenShow {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: rgba(255, 255, 126, 0.85);
+    transition: 1s ease;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scatterBoxAfterAnimationEnd {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: rgba(255, 255, 126, 0.85);
+    transition: 1s ease;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+
+    @media screen and (min-width: 0px) and (max-width: 800px) {
+        position: absolute;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        background-color: rgba(255, 255, 126, 0.85);
+        transition: 1s ease;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.runButton {
+    position: absolute;
+    width: 227px;
+    bottom: 0;
+    right: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: x-large;
+    font-family: prospec;
+    cursor: pointer;
+    z-index: 2;
+    transition: 1s ease;
+}
+
+.afterRunButton {
+    position: absolute;
+    width: 227px;
+    bottom: 0;
+    right: -300px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: x-large;
+    font-family: prospec;
+    cursor: pointer;
+    z-index: 2;
+    transition: 1s ease;
+}
+
+.runButtonHidden {
+    opacity: 0;
+}
+
+.resultButton {
+    position: absolute;
+    width: 475px;
+    bottom: 0;
+    right: -500px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: x-large;
+    font-family: prospec;
+    cursor: default;
+    z-index: 2;
+    transition: 1s ease;
+}
+
+.afterResultButton {
+    position: absolute;
+    width: fit-content;
+    bottom: 0;
+    right: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: x-large;
+    font-family: prospec;
+    cursor: default;
+    z-index: 2;
+    transition: 1s ease;
+
+    @media screen and (min-width: 421px) and (max-width: 520px) {
+        font-size: large;
+    }
+
+    @media screen and (min-width: 341px) and (max-width: 420px) {
+        font-size: medium;
+    }
+
+    @media screen and (min-width: 285px) and (max-width: 340px) {
+        font-size: small;
+    }
+
+    @media screen and (min-width: 0px) and (max-width: 284px) {
+        font-size: x-small;
+    }
+}
+
+.resultButtonHidden {
+    opacity: 0;
+}
+
+.nodesDetail {
+    position: absolute;
+    padding-left: 10px;
+    bottom: 0;
+    left: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: x-large;
+    font-family: prospec;
+    z-index: 6;
+    transition: 1s ease;
+}
+
+.switchButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 6;
+    width: 30px;
+    cursor: pointer;
+    fill: rgba(129, 129, 0, 0.75);
+    margin: 10px;
+    transition: 1s ease;
+
+    @media screen and (min-width: 801px) {
+        display: none;
+    }
+}
+
+.switchButtonRotated {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 6;
+    width: 30px;
+    cursor: pointer;
+    fill: rgb(129, 129, 0, 0.75);
+    transform: rotate(180deg);
+    margin: 10px;
+    transition: 1s ease;
+
+    @media screen and (min-width: 801px) {
+        display: none;
+    }
+}
+
+.switchButton:hover {
+    fill: rgb(105, 105, 0);
+    opacity: 1;
+    transition-duration: .35s;
+}
+
+.switchButtonRotated:hover {
+    fill: rgb(105, 105, 0);
+    opacity: 1;
+    transition-duration: .35s;
+}
