@@ -1,0 +1,311 @@
+.nodesInputContent {
+    height: 100%;
+    width: 100%;
+    transition: 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nodesInputContentHidden {
+    height: 100%;
+    width: 100%;
+}
+
+.nodesInputContentBar {
+    height: 100%;
+    width: 100%;
+    transition: 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 16px;
+    background-image: linear-gradient(to right, rgba(255, 255, 126, 0.95), rgba(255, 255, 126, 0.85));
+}
+
+.sideBarCentered {
+    width: 40%;
+    height: 60vh;
+    background-color: rgba(255, 255, 126, 0.95);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 4;
+    transition: 1s ease;
+}
+
+.sideBar {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    transition: 1s ease;
+    overflow: hidden;
+}
+
+.sideBarHiddenAfterRun {
+    height: 0;
+}
+
+.sideBarTitle {
+    margin: 0;
+    font-size: 50px;
+    text-transform: capitalize;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: prospec;
+}
+
+.sideBarContent {
+    margin: 0;
+    font-size: large;
+    text-transform: capitalize;
+}
+
+.inputBoxUtilsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputBoxContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputBoxContentSideBar {
+    width: 80%;
+    padding: 5px;
+}
+
+.inputBoxContentSideBar {
+    @media screen and (min-width: 641px) and (max-width: 800px) {
+        width: 50%;
+    }
+
+    @media screen and (min-width: 0px) and (max-width: 640px) {
+        width: 60%;
+    }
+}
+
+.form-group {
+    position: relative;
+}
+
+input {
+    position: relative;
+    display: block;
+    width: 90%;
+    border: 1px solid rgba(0, 0, 0, .37);
+    border-radius: 4px;
+    background-color: transparent;
+    margin: 0px auto;
+    padding: 6px 4px 4px 14px;
+    height: 40px;
+    outline: none !important;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.85);
+    transition: all .2s ease-in-out;
+}
+
+label {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    text-align: left;
+    display: inline-block;
+    padding: 0 4px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    background: rgb(255, 255, 126);
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0px auto;
+    cursor: text;
+    transition: all .15s ease-in-out;
+}
+
+input:hover,
+input:focus {
+    border: 1px solid #000;
+}
+
+input:valid+label,
+input:focus+label {
+    top: -6px;
+    color: #000;
+    font-weight: bold;
+}
+
+.addCoordinateButton {
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: rgb(129, 129, 0);
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 1.5;
+    width: 50%;
+    outline: none;
+    overflow: hidden;
+    padding: 13px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+
+    @media screen and (min-width: 981px) and (max-width: 1260px) {
+        padding: 13px 7px;
+        font-size: 14px;
+    }
+
+    @media screen and (min-width: 700px) and (max-width: 980px) {
+        padding: 13px 7px;
+        font-size: 10px;
+    }
+
+    @media screen and (min-width: 461px) and (max-width: 700px) {
+        font-size: 14px;
+        width: 70%;
+    }
+
+    @media screen and (min-width: 316px) and (max-width: 460px) {
+        font-size: 10px;
+        width: 90%;
+        padding: 10px 12px;
+    }
+
+    @media screen and (min-width: 0px) and (max-width: 315px) {
+        font-size: 10px;
+        width: 100%;
+        padding: 10px 6px;
+    }
+}
+
+.addCoordinateButton:hover {
+    background-color: rgb(105, 105, 0);
+    ;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+}
+
+.addCoordinateButton:hover {
+    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+.coordinateButtonCover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: 0px) and (max-width: 800px) {
+        width: 55%;
+    }
+}
+
+.gpsIcon {
+    right: 40px;
+    width: 30px;
+    cursor: pointer;
+    fill: rgb(129, 129, 0);
+    margin-left: 10px;
+    transition: all .3s;
+}
+
+.gpsIcon:hover {
+    fill: rgb(105, 105, 0);
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+}
+
+.container {
+    --uib-size: 60px;
+    --uib-color: black;
+    --uib-speed: 2.6s;
+    --uib-dot-size: calc(var(--uib-size) * 0.23);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--uib-size);
+    height: var(--uib-dot-size);
+    filter: url('#uib-jelly-ooze');
+    transition: 1s ease;
+}
+
+.dot {
+    position: absolute;
+    top: calc(50% - var(--uib-dot-size) / 2);
+    left: calc(0px - var(--uib-dot-size) / 2);
+    display: block;
+    height: var(--uib-dot-size);
+    width: var(--uib-dot-size);
+    border-radius: 50%;
+    background-color: var(--uib-color);
+    animation: stream var(--uib-speed) linear infinite both;
+    transition: background-color 0.3s ease;
+}
+
+.dot:nth-child(2) {
+    animation-delay: calc(var(--uib-speed) * -0.2);
+}
+
+.dot:nth-child(3) {
+    animation-delay: calc(var(--uib-speed) * -0.4);
+}
+
+.dot:nth-child(4) {
+    animation-delay: calc(var(--uib-speed) * -0.6);
+}
+
+.dot:nth-child(5) {
+    animation-delay: calc(var(--uib-speed) * -0.8);
+}
+
+@keyframes stream {
+
+    0%,
+    100% {
+        transform: translateX(0) scale(0);
+    }
+
+    50% {
+        transform: translateX(calc(var(--uib-size) * 0.5)) scale(1);
+    }
+
+    99.999% {
+        transform: translateX(calc(var(--uib-size))) scale(0);
+    }
+}
