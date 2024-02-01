@@ -1,0 +1,201 @@
+.nodesInputContent {
+    height: 100%;
+    width: 100%;
+    transition: 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nodesInputContentHidden {
+    height: 100%;
+    width: 100%;
+}
+
+.nodesInputContentBar {
+    height: 100%;
+    width: 100%;
+    transition: 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.boxCentered {
+    width: 40%;
+    height: 60vh;
+    background-color: rgba(255, 255, 126, 0.95);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 4;
+    transition: 1s ease;
+
+    @media screen and (min-width: 681px) and (max-width: 980px) {
+        width: 60%;
+    }
+
+    @media screen and (min-width: 361px) and (max-width: 680px) {
+        width: 80%;
+    }
+
+    @media screen and (min-width: 0px) and (max-width: 360px) {
+        width: 95%;
+    }
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(255, 255, 126, 0.95), rgba(255, 255, 126, 0.85));
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 4;
+    transition: 1s ease;
+}
+
+.sourceBoxTitle {
+    margin: 0;
+    font-size: xx-large;
+    text-transform: capitalize;
+    font-family: prospec;
+    margin-top: 30px;
+
+    @media screen and (min-width: 361px) and (max-width: 540px) {
+        font-size: x-large;
+    }
+
+    @media screen and (min-width: 0px) and (max-width: 360px) {
+        font-size: large;
+    }
+}
+
+.inputBoxContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputBoxContent {
+    width: 70%;
+    padding: 5px;
+}
+
+.form-group {
+    position: relative;
+}
+
+input {
+    position: relative;
+    display: block;
+    width: 90%;
+    border: 1px solid rgba(0, 0, 0, .37);
+    border-radius: 4px;
+    background-color: transparent;
+    margin: 0px auto;
+    padding: 6px 4px 4px 14px;
+    height: 40px;
+    outline: none !important;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.85);
+    transition: all .2s ease-in-out;
+}
+
+label {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    text-align: left;
+    display: inline-block;
+    padding: 0 4px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    background: rgb(255, 255, 126);
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0px auto;
+    cursor: text;
+    transition: all .15s ease-in-out;
+}
+
+input:hover,
+input:focus {
+    border: 1px solid #000;
+}
+
+input:valid+label,
+input:focus+label {
+    top: -6px;
+    color: #000;
+    font-weight: bold;
+}
+
+.sourceAddCoordinateButton {
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: rgb(129, 129, 0);
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 1.5;
+    width: 50%;
+    outline: none;
+    overflow: hidden;
+    padding: 13px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+
+    @media screen and (min-width: 0px) and (max-width: 520px) {
+        font-size: 14px;
+        width: 60%;
+    }
+}
+
+.sourceAddCoordinateButton:hover {
+    background-color: rgb(105, 105, 0);
+    ;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+}
+
+.sourceAddCoordinateButton:hover {
+    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+.mapSelectorTitle {
+    margin: 0px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    @media screen and (min-width: 0px) and (max-width: 520px) {
+        font-size: 12px;
+    }
+}
