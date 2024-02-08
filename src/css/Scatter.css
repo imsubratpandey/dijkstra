@@ -1,0 +1,97 @@
+.svgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.svgContentBox {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.canvasElement {
+    z-index: 1;
+    position: absolute;
+}
+
+.nodesCircle:hover {
+    cursor: pointer;
+}
+
+.animatedPathsLine {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation: dash 2s linear;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.animatedPathsLineGoOff {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dashOff 2s linear;
+}
+
+@keyframes dashOff {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 1000;
+    }
+}
+
+.shortestPathLine {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation: dashShortest 2s linear;
+}
+
+@keyframes dashShortest {
+    from {
+        stroke-dashoffset: 1000;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.shortestPathLineGoOff {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dashShortestGoOff 2s linear;
+}
+
+@keyframes dashShortestGoOff {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 1000;
+    }
+}
+
+.switchButtonScatterContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    z-index: 5;
+}
