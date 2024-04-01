@@ -1,0 +1,94 @@
+.searchBoxContainer {
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    @media screen and (min-width: 0px) and (max-width: 600px) {
+        left: auto;
+        right: 0;
+        width: 80%;
+    }
+}
+
+.searchBox {
+    width: 80%;
+    padding: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+
+    input {
+        background-color: white;
+        border-radius: 64px;
+    }
+
+    input:hover {
+        border-color: rgba(0, 0, 0, .37);
+    }
+
+    input:focus {
+        border-color: rgba(0, 0, 0, .37);
+    }
+}
+
+.searchIcon {
+    width: 20px;
+    fill: rgb(129, 129, 0);
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.searchBoxResult {
+    width: 75%;
+    padding: 0.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, .37);
+}
+
+.resultBox {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.resultIndiv {
+    position: relative;
+    pointer-events: none;
+    background-color: white;
+    border: 0px;
+    border-radius: 0px;
+    width: 100%;
+}
+
+.resultIndiv::placeholder {
+    position: relative;
+    left: 25px;
+}
+
+.resultGPSIcon {
+    width: 20px;
+    fill: rgb(129, 129, 0);
+    position: absolute;
+    left: 13px;
+    z-index: 6;
+}

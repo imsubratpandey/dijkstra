@@ -1,0 +1,74 @@
+.mapContainer {
+    position: absolute;
+    top: 0vh;
+    width: 100vw;
+    height: 100vh;
+    z-index: 7;
+    transition: 1s ease;
+}
+
+.mapContainerHidden {
+    position: absolute;
+    top: -100vh;
+    width: 100vw;
+    height: 100vh;
+    z-index: 7;
+    transition: 1s ease;
+}
+
+.searchCover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.mapCover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.locationIconContainer {
+    position: absolute;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.locationIcon {
+    width: 30px;
+    cursor: pointer;
+    fill: rgb(129, 129, 0);
+}
+
+.closeIconContainer {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+
+    button {
+        border: 1px solid rgba(0, 0, 0, .37);
+        background-color: rgba(0, 0, 0, 0);
+        background-color: white;
+        border-radius: 16px;
+        font-size: small;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 5px;
+        display: flex;
+        flex-direction: row;
+        p{
+            margin: 0;
+            @media screen and (min-width: 0px) and (max-width: 630px) {
+                display: none;
+            }
+        }
+    }
+}
