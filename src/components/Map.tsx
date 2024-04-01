@@ -1,5 +1,5 @@
 import L, { LatLngExpression } from 'leaflet';
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet';
 import "leaflet/dist/leaflet.css";
 import "../css/Map.css";
@@ -68,6 +68,7 @@ function ClickedMarker({ setLocate, setSelectedPosition }: Props) {
 export default function Maps({ setLoading, showMap, setShowMap, selectedPositon, setSelectedPosition, locate, setLocate, nodes, setNodes }: Props) {
     const locationSelection: LatLngExpression = [selectedPositon?.lat, selectedPositon?.lon];
     const [ListPlace, setListPlace] = useState<any>([]);
+    const inputRef = useRef<any>(null);
     return (
         <>
             <div className={(showMap === true) ? "mapContainer" : "mapContainerHidden"}>
@@ -79,11 +80,11 @@ export default function Maps({ setLoading, showMap, setShowMap, selectedPositon,
                     </svg>
                 </div>
                 <div className="closeIconContainer">
-                    <button onClick={() => { setShowMap(false); }}>Close</button>
+                    <button onClick={() => { setShowMap(false); setSelectedPosition(null); inputRef.current.value = ""; }}>Close</button>
                     {
                         (selectedPositon !== null) ?
                             <>
-                                <button onClick={() => { setNodes([...nodes, { x: selectedPositon?.lat, y: selectedPositon?.lon }]); setShowMap(false); }}>Select this Coordinate<p>({selectedPositon?.lat},{selectedPositon?.lon})</p>?</button>
+                                <button onClick={() => { setNodes([...nodes, { x: selectedPositon?.lat, y: selectedPositon?.lon }]); setShowMap(false); setSelectedPosition(null); inputRef.current.value = ""; }}>Select this Coordinate<p>({selectedPositon?.lat},{selectedPositon?.lon})</p>?</button>
                             </>
                             :
                             <>
@@ -91,7 +92,7 @@ export default function Maps({ setLoading, showMap, setShowMap, selectedPositon,
                     }
                 </div>
                 <div className="searchCover">
-                    <SearchBox setLoading={setLoading} ListPlace={ListPlace} setListPlace={setListPlace} setSelectedPosition={setSelectedPosition} setLocate={setLocate} />
+                    <SearchBox inputRef={inputRef} setLoading={setLoading} ListPlace={ListPlace} setListPlace={setListPlace} setSelectedPosition={setSelectedPosition} setLocate={setLocate} />
                     <div className="mapCover" onClick={() => { setListPlace([]); }}>
                         <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{ width: "100%", height: "100%" }} closePopupOnClick>
                             <TileLayer
@@ -100,7 +101,7 @@ export default function Maps({ setLoading, showMap, setShowMap, selectedPositon,
                             {selectedPositon &&
                                 (<Marker position={locationSelection} icon={icon}>
                                     <Popup>
-                                        {selectedPositon?.display_name}
+                                        {selectedPositon?.display_name ? selectedPositon?.display_name : `(${selectedPositon?.lat},${selectedPositon?.lon})`}
                                     </Popup>
                                 </Marker>)
                             }

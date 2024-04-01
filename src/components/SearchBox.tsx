@@ -1,19 +1,19 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import "../css/SearchBox.css";
 
 interface Props {
     ListPlace: any,
     setListPlace: any,
     setSelectedPosition: any,
-    setLoading: any
-    setLocate: any
+    setLoading: any,
+    setLocate: any,
+    inputRef: any
 }
 
 const NOMINATIM_BASE_URL: string = "https://nominatim.openstreetmap.org/search?";
 
-export default function SearchBox({ setLoading, ListPlace, setListPlace, setSelectedPosition, setLocate }: Props) {
+export default function SearchBox({ setLoading, ListPlace, setListPlace, setSelectedPosition, setLocate, inputRef }: Props) {
     const [searchBoxText, setSearchBoxText] = useState<string>("");
-    const inputRef = useRef<any>(null);
     const fetchResult = async () => {
         const params: any = {
             q: searchBoxText,

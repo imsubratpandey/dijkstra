@@ -64,6 +64,7 @@
         margin: 5px;
         display: flex;
         flex-direction: row;
+        cursor: pointer;
         p{
             margin: 0;
             @media screen and (min-width: 0px) and (max-width: 630px) {
