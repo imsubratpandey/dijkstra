@@ -8,7 +8,6 @@ Dijkstra is a shortest path finder and visualizer web application which uses the
 - Get shortest distance between provided geographic coordinates.
  - Use Map to select your desired geographic coordinates or enter the coordinates manually.
  - Beautiful animation while changing destination coordinates.
- - Download the raw result for every algorithm run.
 
 # What is Dijkstra's Algorithm?
 
